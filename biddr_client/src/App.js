@@ -35,6 +35,7 @@ function App() {
       <NavBar
         onSignOut = {onSignOut}
         currentUser = {user}
+        name = {user?.name}
       />
 
       <Routes>
