@@ -61,6 +61,5 @@ class Api::ApplicationController < ApplicationController
         status: 422
       )
     end
-  
   end
   

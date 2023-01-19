@@ -24,10 +24,14 @@ const AuctionShowPage = (props) => {
 
     const createNewBid = (params) => {
         Bid.create(id, params).then((bid) => {
+            console.log(auction);
             if (bid.errors) {
                 setErrors("Please make a valid entry")
             } else {
-                setAuction(Auction.show(id))
+                Auction.show(props.match.params.id).then((updatedAuction) => {
+                    setAuction(updatedAuction)
+                })
+                console.log(auction);
                 navigate(`/auctions/${id}`)
             }
         })
