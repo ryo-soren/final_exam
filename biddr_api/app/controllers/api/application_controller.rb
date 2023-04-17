@@ -1,7 +1,5 @@
 class Api::ApplicationController < ApplicationController
     skip_before_action :verify_authenticity_token
-    # protect_from_forgery with: :null_session
-    # respond_to :json
 
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     rescue_from StandardError, with: :standard_error
@@ -63,6 +61,5 @@ class Api::ApplicationController < ApplicationController
         status: 422
       )
     end
-  
   end
   
